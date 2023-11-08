@@ -1,0 +1,27 @@
+{
+  "name": "core-utils",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./lib/utils.js",
+      "types": "./lib/utils.d.ts"
+    }
+  },
+  "bin": {
+    "rm": "lib/bin/rm.js"
+  },
+  "scripts": {
+    "install": "node lib/install.js",
+    "build": "node scripts/generate-commands.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "download": "^8.0.0"
+  }
+}
