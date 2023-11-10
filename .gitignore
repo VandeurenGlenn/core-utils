@@ -1,4 +1,4 @@
-bin
+/bin
 man
 .cache
 node_modules
