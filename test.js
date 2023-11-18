@@ -1,4 +1,4 @@
-import install from './lib/install.js'
+import './lib/install.js'
 import { isWindows, shouldDownload } from './lib/utils.js'
 import { execSync } from 'child_process'
 
