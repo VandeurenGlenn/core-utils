@@ -25,7 +25,7 @@ await shouldExtractManual() && await extract('./man', {
 const exes = await readdir(BIN_PATH)
 
 console.log(exes)
-
+const packageJSON = JSON.parse((await readFile('package.json')).toString())
 const bin = {}
 
 const readLines = async (input) => {
@@ -118,7 +118,7 @@ program
   .command('${name}')
   .description("${description}")
   ${result.params.map(({param, description}) => 
-    `.param('${param}', \`${description}\`)`
+    `.option('${param}', \`${description}\`)`
   ).join('\n\t')}
   .action(() => execute('${name}', args))
     
@@ -127,3 +127,5 @@ program
     await writeFile(join('lib/bin', `${name}.js`), content)
 
 }
+packageJSON.bin = bin
+await writeFile('package.json', JSON.stringify(packageJSON, null, '\t'))
