@@ -1,5 +1,5 @@
 {
-  "name": "core-utils",
+  "name": "@win-dev-tools/core-utils",
   "version": "1.0.1",
   "description": "",
   "type": "module",
